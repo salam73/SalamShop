@@ -31,6 +31,56 @@ class MainScreen extends StatelessWidget {
           ],
         ),
         body: Container(),
+        bottomNavigationBar: BottomNavigationBar(
+            backgroundColor: Get.isDarkMode ? darkGreyClr : Colors.white,
+            currentIndex: 0,
+            type: BottomNavigationBarType.fixed,
+            items: [
+              BottomNavigationBarItem(
+                activeIcon: Icon(
+                  Icons.home,
+                  color: Get.isDarkMode ? pinkClr : mainColor,
+                ),
+                icon: Icon(
+                  Icons.home,
+                  color: Get.isDarkMode ? Colors.white : Colors.black,
+                ),
+                label: '',
+              ),
+              BottomNavigationBarItem(
+                activeIcon: Icon(
+                  Icons.category,
+                  color: Get.isDarkMode ? pinkClr : mainColor,
+                ),
+                icon: Icon(
+                  Icons.category,
+                  color: Get.isDarkMode ? Colors.white : Colors.black,
+                ),
+                label: '',
+              ),
+              BottomNavigationBarItem(
+                activeIcon: Icon(
+                  Icons.favorite,
+                  color: Get.isDarkMode ? pinkClr : mainColor,
+                ),
+                icon: Icon(
+                  Icons.favorite,
+                  color: Get.isDarkMode ? Colors.white : Colors.black,
+                ),
+                label: '',
+              ),
+              BottomNavigationBarItem(
+                activeIcon: Icon(
+                  Icons.settings,
+                  color: Get.isDarkMode ? pinkClr : mainColor,
+                ),
+                icon: Icon(
+                  Icons.settings,
+                  color: Get.isDarkMode ? Colors.white : Colors.black,
+                ),
+                label: '',
+              ),
+            ]),
       ),
     );
   }
