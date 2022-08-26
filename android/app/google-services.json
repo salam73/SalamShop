@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "146247947663",
+    "firebase_url": "https://shop-db29e.firebaseio.com",
+    "project_id": "shop-db29e",
+    "storage_bucket": "shop-db29e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:146247947663:android:6100d30b2db9e4c42167fa",
+        "android_client_info": {
+          "package_name": "com.salamshop.salamshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "146247947663-luoo42592o008rnhlvij1mgo2hqk3kml.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.salamshop.salamshop",
+            "certificate_hash": "c4a2f20c476bd1d882a08217510bddc820a457b6"
+          }
+        },
+        {
+          "client_id": "146247947663-i5abhj9ins0bqe9pkkklgvqgeuqatnig.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3EaQ-GoaBQs7nhxCuYLP5sYRL-Brc_Ow"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "146247947663-i5abhj9ins0bqe9pkkklgvqgeuqatnig.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "146247947663-fbsfr0l6f47nd4k6af3cee04d5vjbdhg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "dk.salam.iraqpages"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

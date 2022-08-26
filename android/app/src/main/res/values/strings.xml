@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="app_name">SalamShop</string>
+<string name="facebook_app_id">778859889824669</string>
+<string name="fb_login_protocol_scheme">fb1234</string>
+<string name="facebook_client_token">fa39ba035694e457b5d7409d9a2a352e</string>
+
+</resources>
