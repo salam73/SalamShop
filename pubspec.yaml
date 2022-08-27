@@ -37,6 +37,7 @@ dependencies:
   google_sign_in: ^5.2.1
   firebase_auth: ^3.3.0
   firebase_core: ^1.10.2
+  firebase_database:
   get: ^4.5.1
   get_storage: ^2.0.3
   google_fonts: ^3.0.1
@@ -50,7 +51,7 @@ dependencies:
   readmore: ^2.1.0
   geolocator: ^9.0.1
   geocoding: ^2.0.1
-  pay: ^1.0.6
+ # pay: ^1.0.6
 
 
 dev_dependencies:

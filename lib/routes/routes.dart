@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 import 'package:salamshop/logic/bindings/auth_biniding.dart';
+import 'package:salamshop/logic/bindings/main_binding.dart';
+import 'package:salamshop/salam/salam_main.dart';
 import 'package:salamshop/view/screens/auth/forget_password_screen.dart';
 import 'package:salamshop/view/screens/auth/signup_screen.dart';
 
@@ -12,10 +14,15 @@ class AppRoutes {
 
   static const welcome = Routes.welcomeScreen;
   static const mainScreen = Routes.mainScreen;
+  static const salamMain = Routes.salamMain;
   //getPages
 
   static final routes = [
     GetPage(
+      name: Routes.salamMain,
+      page: () =>  SalamMain(),
+      binding: AuthBinding(),
+    ), GetPage(
       name: Routes.welcomeScreen,
       page: () => const WelcomeScreen(),
     ),
@@ -39,6 +46,7 @@ class AppRoutes {
       page: () => MainScreen(),
       bindings: [
         AuthBinding(),
+        MainBinding(),
       ],
     ),
   ];
@@ -52,4 +60,5 @@ class Routes {
   static const mainScreen = '/mainScreen';
   static const cartScreen = '/cartScreen';
   static const paymentScreen = '/paymentScreen';
+  static const salamMain = '/salamMain';
 }
