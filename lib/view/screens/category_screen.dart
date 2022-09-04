@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 
 class CategoryScreen extends StatelessWidget {
@@ -6,7 +7,8 @@ class CategoryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return  Scaffold(
+      backgroundColor: context.theme.backgroundColor,
       body: Center(
         child: Text('categoryscreen '),
       ),

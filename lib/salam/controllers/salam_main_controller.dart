@@ -8,12 +8,13 @@ class SalamMainController extends GetxController {
   var bagdesCount=0;
 
 
+
   getStream(){
     DatabaseReference starCountRef =
     FirebaseDatabase.instance.ref('users/12');
     starCountRef.onValue.listen((DatabaseEvent event) {
       if(event.snapshot.exists) {
-        // final data = event.snapshot.value;
+         final data = event.snapshot.value;
       }
     });
   }

@@ -73,7 +73,7 @@ class LoginScreen extends StatelessWidget {
                           controller: emailController,
                           obscureText: false,
                           validator: (value) {
-                            if (!RegExp(validationEmail).hasMatch(value)) {
+                            if (!GetUtils.isEmail(value)) {
                               return 'Invalid email';
                             } else {
                               return null;

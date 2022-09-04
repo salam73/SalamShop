@@ -6,6 +6,7 @@ import 'package:salamshop/routes/routes.dart';
 import 'package:salamshop/utils/theme.dart';
 
 import '../../logic/controllers/auth_controller.dart';
+import '../../logic/controllers/theme_controller.dart';
 
 class MainScreen extends StatelessWidget {
   MainScreen({Key? key}) : super(key: key);
@@ -18,29 +19,27 @@ class MainScreen extends StatelessWidget {
     // print(auth.currentUser!.displayName);
     //var d = auth.currentUser!.displayName;
     return SafeArea(
-      child: GetX<MainController>(
-          // init: SalamMainController(),
-
-          builder: (logic) {
+      child: Obx( () {
         return Scaffold(
+          backgroundColor: context.theme.backgroundColor,
           appBar: AppBar(
-            backgroundColor: mainColor,
-            title: Text(logic.title[logic.currentIndex.value]),
+            backgroundColor: Get.isDarkMode ? darkGreyClr : mainColor,
+            elevation: 0,
+            title: Text(controller.title[controller.currentIndex.value]),
             centerTitle: true,
             leading: Container(),
             actions: [
               IconButton(
                 onPressed: () {
-                  Get.isDarkMode?Get.changeThemeMode(ThemeMode.light):Get.changeThemeMode(ThemeMode.dark)
-                  ;
+                  ThemeController().changesTheme();
                 },
                 icon: const Icon(Icons.shopping_basket),
               ),
             ],
           ),
           body: IndexedStack(
-            index: logic.currentIndex.value,
-            children: logic.tabs.value,
+            index: controller.currentIndex.value,
+            children: controller.tabs.value,
           ),
 
           bottomNavigationBar: BottomNavigationBar(

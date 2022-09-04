@@ -51,7 +51,10 @@ dependencies:
   readmore: ^2.1.0
   geolocator: ^9.0.1
   geocoding: ^2.0.1
- # pay: ^1.0.6
+  pay: ^1.0.6
+  font_awesome_flutter:
+  url_launcher:
+
 
 
 dev_dependencies:

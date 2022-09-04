@@ -3,6 +3,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:salamshop/logic/controllers/theme_controller.dart';
 
 import 'controllers/salam_main_controller.dart';
 
@@ -17,15 +19,14 @@ class SalamMain extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-
         actions: [
           GetBuilder<SalamMainController>(builder: (logic) {
             return Padding(
               padding: const EdgeInsets.only(right: 15),
               child: Badge(
                 position: BadgePosition.topStart(top: 0, start: -10),
-               // animationDuration: const Duration(milliseconds: 1300),
-               // animationType: BadgeAnimationType.slide,
+                // animationDuration: const Duration(milliseconds: 1300),
+                // animationType: BadgeAnimationType.slide,
                 badgeContent: Text(
                   logic.bagdesCount.toString(),
                   style: const TextStyle(color: Colors.white),
@@ -38,7 +39,7 @@ class SalamMain extends StatelessWidget {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             GetBuilder<SalamMainController>(
               builder: (_) {
@@ -55,8 +56,9 @@ class SalamMain extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () async {
                         controllers.getBadge();
+                        // controllers.getStream();
                         /*controllers.getData();
-                        controllers.getStream();
+
 
                         controllers.changeText();*/
                         /* Get.snackbar(
@@ -73,7 +75,7 @@ class SalamMain extends StatelessWidget {
                            // color: Colors.white,
                           ),
                         );*/
-                      /*  Get.defaultDialog(
+                        /*  Get.defaultDialog(
                             title: "GeeksforGeeks",
                             middleText: "Hello world!",
                             //backgroundColor: Colors.green,
@@ -99,8 +101,8 @@ class SalamMain extends StatelessWidget {
                             )
                         );*/
                       },
-                      child:
-                      Text(!controllers.active.value ? 'active' : 'not active'),
+                      child: Text(
+                          !controllers.active.value ? 'active' : 'not active'),
                     ),
                     Text(controllers.mText)
                   ],
@@ -108,15 +110,30 @@ class SalamMain extends StatelessWidget {
               },
             ),
             Obx(() {
-              return Text(controllers.myText.value,
-                style: const TextStyle(fontSize: 30),);
+              return Text(
+                controllers.myText.value,
+                style: const TextStyle(fontSize: 30),
+              );
             }),
-          ],
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              children: [
+                ElevatedButton(
+                  onPressed: () => ThemeController().changesTheme(),
+                  child: Text('check email'),
+                ),
 
+              ],
+            ),
+           /* GetBuilder<ThemeController>(builder: (logic) {
+              return Text(logic.myThem);
+            })*/
+
+          ],
         ),
       ),
     );
   }
 }
-
-
