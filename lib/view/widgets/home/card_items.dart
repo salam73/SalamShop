@@ -1,11 +1,41 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:salamshop/logic/controllers/product_controller.dart';
+import 'package:salamshop/utils/theme.dart';
 
 class CardItems extends StatelessWidget {
-  const CardItems({Key? key}) : super(key: key);
+   CardItems({Key? key}) : super(key: key);
+  final controller =Get.find<ProductController>();
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return
+      Obx(() {
+        if(controller.isLoading.value) {
+          return const CircularProgressIndicator(
+            color: mainColor,
+          );
+        } else {
+        return  Expanded(
+            child: GridView.builder(
+              itemCount: 15,
+              gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                childAspectRatio: 0.8,
+                mainAxisSpacing: 9.0,
+                crossAxisSpacing: 6.0,
+                maxCrossAxisExtent: 210,
+              ),
+              itemBuilder: (context,index){
+                return builderCardItems(image: controller.productList[index].image);
+              },
+            ),
+          );
+        }
+      }
+
+
+            )
+      /*Expanded(
       child: GridView.builder(
         itemCount: 15,
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
@@ -18,12 +48,13 @@ class CardItems extends StatelessWidget {
           return builderCardItems();
         },
       ),
-    );
+    )*/;
   }
 
-  Widget builderCardItems() {
+  Widget builderCardItems({required String image}) {
+
     return Padding(
-      padding: const EdgeInsets.all(5),
+      padding: const EdgeInsets.all(6),
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
@@ -58,13 +89,13 @@ class CardItems extends StatelessWidget {
             ),
             Container(
               width: double.infinity,
-              height: 140,
+              height: 170,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: Image.asset(
-                'assets/salamprofile.jpeg',
+              child: Image.network(
+                image,
                 fit: BoxFit.fitHeight,
               ),
               //fit: BoxFit.fitHeight,
