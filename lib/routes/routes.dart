@@ -5,6 +5,7 @@ import 'package:salamshop/salam/salam_main.dart';
 import 'package:salamshop/view/screens/auth/forget_password_screen.dart';
 import 'package:salamshop/view/screens/auth/signup_screen.dart';
 
+import '../logic/bindings/product_binding.dart';
 import '../view/screens/auth/login_screen.dart';
 import '../view/screens/main_screen.dart';
 import '../view/screens/welcome_screen.dart';
@@ -47,6 +48,7 @@ class AppRoutes {
       bindings: [
         AuthBinding(),
         MainBinding(),
+        ProductBinding()
       ],
     ),
   ];
