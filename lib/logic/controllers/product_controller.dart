@@ -21,13 +21,14 @@ class ProductController extends GetxController {
   void onInit() {
     super.onInit();
 
-    List? storedShoppings = stoarge.read<List>('isFavouritesList');
+   /* List? storedShoppings = stoarge.read<List>('isFavouritesList');
 
     if (storedShoppings != null) {
       favouritesList =
           storedShoppings.map((e) => ProductModels.fromJson(e)).toList().obs;
-    }
+    }*/
     getProducts();
+
   }
 
   void getProducts() async {
@@ -40,6 +41,7 @@ class ProductController extends GetxController {
       }
     } finally {
       isLoading(false);
+
     }
   }
 
